@@ -1,0 +1,27 @@
+{
+  "name": "Trader Desktop - AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kconst/trader-desktop-angular",
+  "authors": [
+    "kconst <kconst@gmail.com>"
+  ],
+  "description": "The trader desktop exercise built in Angular JS instead of Backbone/Keel.",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "trader",
+    "desktop"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.13"
+  }
+}

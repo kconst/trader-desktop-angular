@@ -1,6 +1,6 @@
 /*
 Syntax error: File to import not found or unreadable: compass.
-              Load path: /Users/kconst/Box Sync/WebstormProjects/trader-desktop/client/sass
+              Load path: /Users/kconst/Box Sync/WebstormProjects/trader-desktop-angular/client/sass
         on line 27 of index.scss
 
 22:  *\/
@@ -54,4 +54,4 @@ index.scss:27
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: compass.\A               Load path: /Users/kconst/Box Sync/WebstormProjects/trader-desktop/client/sass\A         on line 27 of index.scss\A \A 22:  */\A 23: \A 24: // -----------------------------------------------------------------------------\A 25: // Vendor Stylesheets\A 26: // -----------------------------------------------------------------------------\A 27: @import \"compass\";\A 28: @import \"vendor/normalize\";\A 29: @import \"vendor/h5bp\";\A 30: @import \"vendor/jquery-ui-1.10.0.custom\";\A 31: \A 32: // -----------------------------------------------------------------------------"; }
+  content: "Syntax error: File to import not found or unreadable: compass.\A               Load path: /Users/kconst/Box Sync/WebstormProjects/trader-desktop-angular/client/sass\A         on line 27 of index.scss\A \A 22:  */\A 23: \A 24: // -----------------------------------------------------------------------------\A 25: // Vendor Stylesheets\A 26: // -----------------------------------------------------------------------------\A 27: @import \"compass\";\A 28: @import \"vendor/normalize\";\A 29: @import \"vendor/h5bp\";\A 30: @import \"vendor/jquery-ui-1.10.0.custom\";\A 31: \A 32: // -----------------------------------------------------------------------------"; }
