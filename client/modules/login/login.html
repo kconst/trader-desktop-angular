@@ -1,0 +1,10 @@
+<section ng-controller="LoginController">
+    <h2>User selection:</h2>
+    <!--ng-options="user.name for user in users" -->
+    <select ng-model="user" ng-options="user.name for user in users">
+        <!--<option ng-repeat="user in users">{{user.name}}</option>-->
+        <option value="">-- choose a user --</option>
+    </select>
+
+    <input type="button" class="login" ng-click="doLogin()" value="Log In">
+</section>

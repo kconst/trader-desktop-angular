@@ -1,0 +1,47 @@
+<section id="order-table-page">
+    <div class="traderWidget">
+        <nav>
+            <a class="button makeTrade">Trade</a>
+            <a class="button delete">Delete All</a>
+            <a class="button refresh">Refresh</a>
+        </nav>
+
+        <aside>
+            <a class="button image-button graph">Graph</a>
+            <a class="button image-button table">Calculator</a>
+        </aside>
+
+        <table>
+            <thead>
+            <tr>
+                <td>Id</td>
+                <td>Creation Time</td>
+                <td>Side</td>
+                <td>Symbol</td>
+                <td>Quantity</td>
+                <td>Placed</td>
+                <td>Executed</td>
+                <td>Limit Price</td>
+                <td>Priority</td>
+                <td>Status</td>
+                <td>Trader</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="order in orders">
+                <td>{{id}}</td>
+                <td>{{creationTime}}</td>
+                <td>{{side}}</td>
+                <td>{{symbol}}</td>
+                <td>{{quantity}}</td>
+                <td>{{quantityPlaced}}</td>
+                <td>{{quantityExecuted}}</td>
+                <td>${{limitPrice}}</td>
+                <td>{{priority}}</td>
+                <td>{{status}}</td>
+                <td>{{traderId}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
