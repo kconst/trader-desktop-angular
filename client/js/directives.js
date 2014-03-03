@@ -47,7 +47,7 @@ traderDesktopApp.directive('ngCustomModal', function(tradesService, userService)
                 // hide the directive
                 $scope.$parent.makingTrade = false;
 
-                $scope.$parent.refreshTrades();
+//                $scope.$parent.refreshTrades();
             };
         },
         restrict : 'E',

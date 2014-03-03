@@ -1,25 +1,7 @@
 (function(){
-    App.controllers.DeskController = function ($scope, tradesService, userService, $routeParams, $rootScope) {
-        // load data for template
-        tradesService.orders.query(function(data){
-            $scope.trades = data;
-        });
-
-        $rootScope.$on('orderCreatedEvent', function(){
-            $scope.refreshTrades();
-        });
-
-        $rootScope.$on('placementCreatedEvent', function(){
-            $scope.refreshTrades();
-        });
-
-        $rootScope.$on('executionCreatedEvent', function(){
-            $scope.refreshTrades();
-        });
-
-        $rootScope.$on('allOrdersDeletedEvent', function(){
-            $scope.refreshTrades();
-        });
+    App.controllers.DeskController = function ($scope, tradesService, tradesModel, userService, $routeParams) {
+        // connect the model to this controller's scope
+        tradesModel.setScope($scope);
 
         // look up provided ID and set the user if they came to the desktop directly
         if (!userService.getLoggedInUser()) {
@@ -45,10 +27,10 @@
             $scope.refreshTrades();
         } ;
 
-        $scope.refreshTrades = function(){
+        /*$scope.refreshTrades = function(){
             tradesService.orders.query(function(data){
                 $scope.trades = data;
             });
-        };
+        };*/
     };
 }());
