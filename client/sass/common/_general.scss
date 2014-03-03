@@ -13,7 +13,6 @@ body {
 
 h1 {
     font: normal normal 20px Arial;
-    margin: 0 0 10px 0;
 }
 
 h2 {
@@ -42,11 +41,15 @@ select {
     border: 1px solid black;
     max-width: 750px;
 
-    header {
+    ng-header {
         border-bottom: 1px solid black;
         display: inline-block;
         padding: 5px;
         width: 100%;
+
+        a {
+            float: right;
+        }
 
         aside {
             float: right;
@@ -59,7 +62,9 @@ select {
         }
 
         span {
+            float: right;
             font-style: italic;
+            margin-right: 5px;
         }
     }
 
@@ -133,9 +138,18 @@ select {
         aside {
             float: right;
 
-            a {
+            .image-button {
+                font-size: 0;
                 float: right;
                 margin-right: 10px;
+
+                &.table {
+                    background: url('../img/table.png') #000 no-repeat center;
+                }
+
+                &.graph {
+                    background: url('../img/chart.png') #000 no-repeat center;
+                }
             }
         }
 
@@ -156,7 +170,7 @@ select {
   /* -----------------------------------------------------------------------------
    * Create order modal
    * -------------------------------------------------------------------------- */
-  .createTradeModal {
+    ng-custom-modal {
       background-color: rgba(0, 0, 0, .8);
       height: 100%;
       left: 0;

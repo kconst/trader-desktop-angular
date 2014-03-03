@@ -1,9 +1,11 @@
 <section id="order-table-page">
+    <ng-header></ng-header>
+
     <div class="traderWidget">
         <nav>
-            <a class="button makeTrade">Trade</a>
-            <a class="button delete">Delete All</a>
-            <a class="button refresh">Refresh</a>
+            <a class="button makeTrade" ng-click="doTrade()">Trade</a>
+            <a class="button delete" ng-click="deleteTrades()">Delete All</a>
+            <a class="button refresh" ng-click="refreshTrades()">Refresh</a>
         </nav>
 
         <aside>
@@ -28,20 +30,22 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="order in orders">
-                <td>{{id}}</td>
-                <td>{{creationTime}}</td>
-                <td>{{side}}</td>
-                <td>{{symbol}}</td>
-                <td>{{quantity}}</td>
-                <td>{{quantityPlaced}}</td>
-                <td>{{quantityExecuted}}</td>
-                <td>${{limitPrice}}</td>
-                <td>{{priority}}</td>
-                <td>{{status}}</td>
-                <td>{{traderId}}</td>
+            <tr ng-repeat="trade in trades">
+                <td>{{trade.id}}</td>
+                <td>{{trade.creationTime}}</td>
+                <td>{{trade.side}}</td>
+                <td>{{trade.symbol}}</td>
+                <td>{{trade.quantity}}</td>
+                <td>{{trade.quantityPlaced}}</td>
+                <td>{{trade.quantityExecuted}}</td>
+                <td>${{trade.limitPrice}}</td>
+                <td>{{trade.priority}}</td>
+                <td>{{trade.status}}</td>
+                <td>{{trade.traderId}}</td>
             </tr>
             </tbody>
         </table>
+
+        <ng-custom-modal ng-show="makingTrade"></ng-custom-modal>
     </div>
 </section>

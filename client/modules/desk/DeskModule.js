@@ -1,7 +1,7 @@
 var deskModule = angular.module('deskModule', ['ngResource']);
 
-deskModule.factory('tradeService', ['$resource', function($resource) {
+deskModule.factory('tradesService', ['$resource', function($resource) {
     return App.services.TradesService.bind($resource)();
 }]);
 
-deskModule.controller('DeskController', ['$scope', 'tradeService', '$rootScope', App.controllers.DeskController]);
+deskModule.controller('DeskController', ['$scope', 'tradesService', 'userService', '$routeParams', '$rootScope', App.controllers.DeskController]);

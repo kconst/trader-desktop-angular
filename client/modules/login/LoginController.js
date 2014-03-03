@@ -5,6 +5,8 @@
         });
 
         $scope.doLogin = function(){
+            userService.setLoggedInUser($scope.user);
+
             $location.path('/' + $scope.user.id);
         };
     };

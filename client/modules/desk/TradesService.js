@@ -3,35 +3,27 @@
         var $resource = this;
 
         return {
-            createOrder : function(){
-
-            },
-
-            deleteAll : function(){
-
-            },
-
-            getInstruments : function(){
-
-            },
-
-            getOrders : function(){
-                return $resource('/rest/orders', {}, {
+            instruments : $resource('/rest/instruments', {}, {
                     query: {
                         method :'GET',
                         params : {},
                         isArray : true
                     }
-                });
-            },
+            }),
 
-            getLoggedInUser : function(){
-
-            },
-
-            setLoggedInUser : function(){
-
-            }
+            orders : $resource('/rest/orders', {}, {
+                query : {
+                    method :'GET',
+                    params : {},
+                    isArray : true
+                },
+                create : {
+                    method : 'POST'
+                },
+                deleteAll : {
+                    method : 'DELETE'
+                }
+            })
         }
     };
 }());

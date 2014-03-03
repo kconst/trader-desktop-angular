@@ -1,0 +1,15 @@
+<modal>
+    <header>
+        <h2>Create Multiple Trades</h2>
+        <a class="close" href="#/{{userId}}" ng-click="doClose()">X</a>
+    </header>
+    <form>
+        <p>Enter number of trades</p>
+        <input type="text" ng-model="tradeCount">
+
+        <hr>
+
+        <a class="button cancel">Cancel</a>
+        <input type="submit" class="button create" value="Create" ng-click="createTrade()"></a>
+    </form>
+</modal>
