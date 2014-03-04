@@ -1,40 +1,47 @@
 (function(){
     App.models.TradesModel = function(tradesService, $rootScope){
+        // used to correct javascript scope which angular dumps up to window
+        var resolve = (function (callback, execute) {
+            if (execute === false) {
+                return callback.bind(this);
+            }
+
+            callback.bind(this)();
+        }).bind(this);
+
         this.scope = {};
 
         this.setScope = function($scope){
             this.scope = $scope;
         };
 
-debugger
-        this.scope.trades = tradesService.orders.query((function(data){
-            debugger
+        this.scope.trades = tradesService.orders.query(resolve(function(data){
             this.scope.trades = data;
-        }).bind(this));
+        }, false));
 
-        $rootScope.$on('orderCreatedEvent', (function(){
-            tradesService.orders.query((function(data){
+        $rootScope.$on('orderCreatedEvent', resolve(function(){
+            tradesService.orders.query(resolve(function(data){
                 this.scope.trades = data;
-            }).bind(this));
-        }).bind(this));
+            }));
+        }));
 
-        $rootScope.$on('placementCreatedEvent', (function(){
-            tradesService.orders.query((function(data){
+        $rootScope.$on('placementCreatedEvent', resolve(function(){
+            tradesService.orders.query(resolve(function(data){
                 this.scope.trades = data;
-            }).bind(this));
-        }).bind(this));
+            }));
+        }));
 
-        $rootScope.$on('executionCreatedEvent', (function(){
-            tradesService.orders.query((function(data){
+        $rootScope.$on('executionCreatedEvent', resolve(function(){
+            tradesService.orders.query(resolve(function(data){
                 this.scope.trades = data;
-            }).bind(this));
-        }).bind(this));
+            }));
+        }));
 
-        $rootScope.$on('allOrdersDeletedEvent', (function(){
-            tradesService.orders.query((function(data){
+        $rootScope.$on('allOrdersDeletedEvent', resolve(function(){
+            tradesService.orders.query(resolve(function(data){
                 this.scope.trades = data;
-            }).bind(this));
-        }).bind(this));
+            }));
+        }));
 
         return this;
     };

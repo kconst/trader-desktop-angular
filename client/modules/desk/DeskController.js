@@ -23,14 +23,6 @@
 
         $scope.deleteTrades = function(){
             tradesService.orders.deleteAll();
-
-//            $scope.refreshTrades();
         };
-
-        /*$scope.refreshTrades = function(){
-            tradesService.orders.query(function(data){
-                $scope.trades = data;
-            });
-        };*/
     };
 }());
