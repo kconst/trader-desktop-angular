@@ -1,6 +1,7 @@
 var traderDesktopApp = angular.module('traderDesktopApp', [
     'ngRoute',
-    'traderDesktopControllers'
+    'traderDesktopControllers',
+    'traderDesktopFilters'
 ]),
 traderDesktopControllers,
 App = {

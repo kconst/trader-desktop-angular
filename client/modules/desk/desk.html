@@ -30,7 +30,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="trade in trades">
+            <tr ng-repeat="trade in trades | byUser">
                 <td>{{trade.id}}</td>
                 <td>{{trade.creationTime}}</td>
                 <td>{{trade.side}}</td>

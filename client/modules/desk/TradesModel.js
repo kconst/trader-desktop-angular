@@ -13,11 +13,12 @@
 
         this.setScope = function($scope){
             this.scope = $scope;
-        };
 
-        this.scope.trades = tradesService.orders.query(resolve(function(data){
-            this.scope.trades = data;
-        }, false));
+            // force data sync
+            this.scope.trades = tradesService.orders.query(resolve(function(data){
+                this.scope.trades = data;
+            }, false));
+        };
 
         $rootScope.$on('orderCreatedEvent', resolve(function(){
             tradesService.orders.query(resolve(function(data){
