@@ -2,11 +2,11 @@
     App.models.TradesModel = function(tradesService, $rootScope){
         // used to correct javascript scope which angular dumps up to window
         var resolve = (function (callback, execute) {
-            if (execute === false) {
-                return callback.bind(this);
+            if (execute === true) {
+                return callback.bind(this)();
             }
 
-            callback.bind(this)();
+            return callback.bind(this);
         }).bind(this);
 
         this.scope = {};
@@ -17,8 +17,14 @@
             // force data sync
             this.scope.trades = tradesService.orders.query(resolve(function(data){
                 this.scope.trades = data;
-            }, false));
+            }));
         };
+
+        /*$rootScope.$on('orderCreatedEvent', (function(){
+            tradesService.orders.query((function(data){
+                this.scope.trades = data;
+            }).bind(this));
+        }).bind(this));*/
 
         $rootScope.$on('orderCreatedEvent', resolve(function(){
             tradesService.orders.query(resolve(function(data){
