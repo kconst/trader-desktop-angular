@@ -1,5 +1,5 @@
 (function(){
-    App.controllers.LoginController = function ($scope, userService, $location) {
+    App.Controllers.LoginController = function ($scope, userService, $location) {
         userService.getUsers().success(function(data){
             $scope.users = data;
         });
@@ -11,4 +11,3 @@
         };
     };
 }());
-

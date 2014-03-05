@@ -1,5 +1,5 @@
 (function(){
-    App.services.TradesService = function(){
+    App.Services.TradesService = function(){
         var $resource = this;
 
         return {

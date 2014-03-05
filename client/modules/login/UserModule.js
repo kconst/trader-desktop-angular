@@ -1,11 +1,15 @@
-var userModule = angular.module('userModule', []);
+(function(){
+    var userModule = angular.module('userModule', []);
 
-userModule.factory('userService', ['$http', function($http) {
-    return App.services.UserService.bind($http)();
-}]);
+    App.Modules.userModule = userModule;
 
-/*userModule.factory('userModel', ['userService', function(userService) {
-    return App.models.UserModel(userService);
-}]);*/
+    userModule.factory('userService', ['$http', function($http) {
+        return App.Services.UserService.bind($http)();
+    }]);
 
-userModule.controller('LoginController', ['$scope', 'userService', '$location', App.controllers.LoginController]);
+    /*userModule.factory('userModel', ['userService', function(userService) {
+        return App.Models.UserModel(userService);
+    }]);*/
+
+    userModule.controller('LoginController', ['$scope', 'userService', '$location', App.Controllers.LoginController]);
+}());

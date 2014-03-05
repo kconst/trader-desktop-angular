@@ -1,5 +1,5 @@
 (function(){
-    App.controllers.DeskController = function ($scope, tradesService, tradesModel, userService, $routeParams) {
+    App.Controllers.DeskController = function ($scope, tradesService, tradesModel, userService, $routeParams) {
         // connect the model to this controller's scope
         tradesModel.setScope($scope);
 

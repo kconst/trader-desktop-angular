@@ -1,5 +1,5 @@
 (function(){
-    App.models.TradesModel = function(tradesService, $rootScope){
+    App.Models.TradesModel = function(tradesService, $rootScope){
         // used to correct javascript scope which angular dumps up to window
         var resolve = (function (callback, execute) {
             if (execute === true) {

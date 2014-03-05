@@ -1,5 +1,5 @@
 (function(){
-    App.services.UserService = function(){
+    App.Services.UserService = function(){
         var $http = this;
 
         return {
